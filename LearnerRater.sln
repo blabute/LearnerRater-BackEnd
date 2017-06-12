@@ -3,6 +3,22 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8D026087-24CB-4BF6-A2A3-835F747E9CA1}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{DC6DD513-AE35-45C5-9C6E-DB0466351AB9}"
+	ProjectSection(SolutionItems) = preProject
+		src\temp.txt = src\temp.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{23E7C35C-154A-4DEB-A493-06E6CC53C9C1}"
+	ProjectSection(SolutionItems) = preProject
+		test\temp.txt = test\temp.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
