@@ -60,14 +60,30 @@
   <ItemGroup>
     <Folder Include="Properties" />
     <Folder Include="Security\" />
+    <Folder Include="Tables" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Stored Procedures\" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Security\LearnerRater.sql" />
     <Build Include="Security\LearnerRater_Login.sql" />
     <Build Include="Security\RoleMemberships.sql" />
+    <Build Include="Tables\CourseResources.sql" />
+    <Build Include="Tables\CourseReviews.sql" />
+    <Build Include="dbo\Stored Procedures\GetResourceCount.sql" />
+    <Build Include="dbo\Stored Procedures\GetResources.sql" />
+    <Build Include="dbo\Stored Procedures\GetReviews.sql" />
+    <Build Include="dbo\Stored Procedures\SaveResource.sql" />
+    <Build Include="dbo\Stored Procedures\SaveReview.sql" />
+    <Build Include="dbo\Stored Procedures\DeleteResource.sql" />
+    <Build Include="dbo\Stored Procedures\DeleteReview.sql" />
+    <Build Include="dbo\Stored Procedures\DeleteResourceReviews.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="LearnerRaterDB.publish.xml" />
     <None Include="LearnerRaterDBSchemaCompare.scmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="LearnerRaterDB.refactorlog" />
   </ItemGroup>
 </Project>

@@ -1,3 +1,9 @@
 # Visual Studio
 .vs
 *.user
+bin/
+obj/
+packages/
+Microsoft*.*
+*.dbmdl
+*.refactorlog
