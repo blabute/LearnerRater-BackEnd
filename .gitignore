@@ -6,4 +6,3 @@ obj/
 packages/
 Microsoft*.*
 *.dbmdl
-*.refactorlog
