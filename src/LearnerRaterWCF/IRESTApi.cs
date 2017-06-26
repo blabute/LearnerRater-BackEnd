@@ -12,7 +12,7 @@ namespace LearnerRaterWCF
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the interface name "RESTApi" in both code and config file together.
     [ServiceContract]
     public interface IRESTApi
-    {
+    {       
         // Get Categories 
         [OperationContract]
         [WebInvoke(Method = "GET",
