@@ -43,7 +43,7 @@ namespace LearnerRaterWCF.ClassFiles.DataAccess
 
                 resource.ID = dt[i].Resource_ID;
                 if (!dt[i].IsCategoryNull())
-                    resource.Catagory = dt[i].Category;
+                    resource.Category = dt[i].Category;
                 if (!dt[i].IsTitleNull())
                     resource.Title = dt[i].Title;
                 if (!dt[i].IsAuthorNull())
@@ -80,7 +80,7 @@ namespace LearnerRaterWCF.ClassFiles.DataAccess
 
         public bool UpdateResource(long? resourceId, ApiClassResource resource)
         {
-            ResourcesTblAdapter.SaveResource(ref resourceId, resource.Catagory, resource.Title, resource.Author, resource.Description, resource.Website, resource.URL);
+            ResourcesTblAdapter.SaveResource(ref resourceId, resource.Category, resource.Title, resource.Author, resource.Description, resource.Website, resource.URL);
             var bResult = (resourceId != null);
             if (bResult)
             {

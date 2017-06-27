@@ -90,7 +90,7 @@ namespace LearnerRaterWCF
             long? result;
             try
             {
-                resource.Catagory = category;
+                resource.Category = category;
                 var dataResource = new DataClassResource();
                 result = dataResource.SaveResource(category, resource);
                 if (result == null)

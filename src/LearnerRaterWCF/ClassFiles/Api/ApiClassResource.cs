@@ -12,7 +12,7 @@ namespace LearnerRaterWCF.ClassFiles.Api
             m_ReviewList = new List<ApiClassReview>();
         }
         public long ID { get; set; }
-        public string Catagory { get; set; }
+        public string Category { get; set; }
         public string Title { get; set; }
         public string Author { get; set; }
         public string Description { get; set; }
