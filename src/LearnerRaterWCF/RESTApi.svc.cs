@@ -43,7 +43,6 @@ namespace LearnerRaterWCF
                 result.Add(ApiClassCategory.Add("HTML"));
                 result.Add(ApiClassCategory.Add("SVG"));
                 result.Add(ApiClassCategory.Add("Other"));
-                result.Add(ApiClassCategory.Add("Added For Demo"));
 
                 var dataResource = new DataClassResource();
                 dataResource.SetCategoryResourceCounts(result);
