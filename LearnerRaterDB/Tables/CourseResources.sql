@@ -6,6 +6,6 @@
     [Author] VARCHAR(50) NULL, 
     [Description] VARCHAR(MAX) NULL, 
     [Website] VARCHAR(50) NULL, 
-    [URL] VARCHAR(200) NULL ,
+    [URL] VARCHAR(2048) NULL ,
 	PRIMARY KEY CLUSTERED ([Resource_ID] ASC)
 )

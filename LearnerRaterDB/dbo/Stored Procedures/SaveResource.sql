@@ -5,7 +5,7 @@
 	@Author varchar(50),
 	@Description varchar(MAX),
 	@Website varchar(50),
-	@URL varchar(200)
+	@URL varchar(2048)
 AS
 	IF ((SELECT COUNT(1) FROM CourseResources WHERE [Resource_ID] = @Resource_ID) =0)
 	BEGIN
