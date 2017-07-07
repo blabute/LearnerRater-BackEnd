@@ -8,7 +8,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
     <ProjectGuid>{7bb3c9e0-28cb-4658-831c-123712abcba0}</ProjectGuid>
-    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql110DatabaseSchemaProvider</DSP>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath>
     </RootPath>
@@ -59,15 +59,11 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
-    <Folder Include="Security\" />
     <Folder Include="Tables" />
     <Folder Include="dbo\" />
     <Folder Include="dbo\Stored Procedures\" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="Security\LearnerRater.sql" />
-    <Build Include="Security\LearnerRater_Login.sql" />
-    <Build Include="Security\RoleMemberships.sql" />
     <Build Include="Tables\CourseResources.sql" />
     <Build Include="Tables\CourseReviews.sql" />
     <Build Include="dbo\Stored Procedures\GetResourceCount.sql" />
