@@ -42,6 +42,8 @@ namespace LearnerRaterWCF
                 result.Add(ApiClassCategory.Add("SASS"));
                 result.Add(ApiClassCategory.Add("HTML"));
                 result.Add(ApiClassCategory.Add("SVG"));
+                result.Add(ApiClassCategory.Add("Git"));
+                result.Add(ApiClassCategory.Add("Kanban"));
                 result.Add(ApiClassCategory.Add("Other"));
 
                 var dataResource = new DataClassResource();
