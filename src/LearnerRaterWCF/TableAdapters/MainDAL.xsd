@@ -31,7 +31,7 @@
               <Mapping SourceColumn="URL" DataSetColumn="URL" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="LearnerRaterConnectionString (Web.config)" DbObjectName="LearnerRater.dbo.DeleteResource" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="DeleteResource" Modifier="Public" Name="DeleteResource" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="DeleteResource">
+              <DbSource ConnectionRef="LearnerRaterConnectionString (Web.config)" DbObjectName="LearnerRater.dbo.DeleteResource" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="DeleteResource" Modifier="Public" Name="DeleteResource" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteResource">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.DeleteResource</CommandText>
@@ -54,7 +54,7 @@
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="LearnerRaterConnectionString (Web.config)" DbObjectName="LearnerRater.dbo.SaveResource" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="SaveResource" Modifier="Public" Name="SaveResource" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="SaveResource">
+              <DbSource ConnectionRef="LearnerRaterConnectionString (Web.config)" DbObjectName="LearnerRater.dbo.SaveResource" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="SaveResource" Modifier="Public" Name="SaveResource" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="SaveResource">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.SaveResource</CommandText>
@@ -94,7 +94,7 @@
               <Mapping SourceColumn="Comments" DataSetColumn="Comments" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="LearnerRaterConnectionString (Web.config)" DbObjectName="LearnerRater.dbo.DeleteResourceReviews" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="DeleteResourceReviews" Modifier="Public" Name="DeleteResourceReviews" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="DeleteResourceReviews">
+              <DbSource ConnectionRef="LearnerRaterConnectionString (Web.config)" DbObjectName="LearnerRater.dbo.DeleteResourceReviews" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="DeleteResourceReviews" Modifier="Public" Name="DeleteResourceReviews" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteResourceReviews">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.DeleteResourceReviews</CommandText>
@@ -117,7 +117,7 @@
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="LearnerRaterConnectionString (Web.config)" DbObjectName="LearnerRater.dbo.SaveReview" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="SaveReview" Modifier="Public" Name="SaveReview" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="SaveReview">
+              <DbSource ConnectionRef="LearnerRaterConnectionString (Web.config)" DbObjectName="LearnerRater.dbo.SaveReview" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="SaveReview" Modifier="Public" Name="SaveReview" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="SaveReview">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.SaveReview</CommandText>
@@ -134,6 +134,54 @@
               </DbSource>
             </Sources>
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="GetUsersTableAdapter" GeneratorDataComponentClassName="GetUsersTableAdapter" Name="GetUsers" UserDataComponentName="GetUsersTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="LearnerRaterConnectionString (Web.config)" DbObjectName="LearnerRater.dbo.GetUsers" DbObjectType="StoredProcedure" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="GetData">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.GetUsers</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="User_ID" DataSetColumn="User_ID" />
+              <Mapping SourceColumn="Username" DataSetColumn="Username" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="LearnerRaterConnectionString (Web.config)" DbObjectName="LearnerRater.dbo.Login" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="Login" Modifier="Public" Name="Login" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="Login">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.Login</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@Username" Precision="0" ProviderType="VarChar" Scale="0" Size="50" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@Password" Precision="0" ProviderType="VarChar" Scale="0" Size="50" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="bit" DbType="Boolean" Direction="InputOutput" ParameterName="@LoggedOnSuccessfully" Precision="1" ProviderType="Bit" Scale="0" Size="1" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="InputOutput" ParameterName="@ResponseMessage" Precision="0" ProviderType="NVarChar" Scale="0" Size="250" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="LearnerRaterConnectionString (Web.config)" DbObjectName="LearnerRater.dbo.SaveUser" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="SaveUser" Modifier="Public" Name="SaveUser" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="SaveUser">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.SaveUser</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="bigint" DbType="Int64" Direction="InputOutput" ParameterName="@User_ID" Precision="19" ProviderType="BigInt" Scale="0" Size="8" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@Username" Precision="0" ProviderType="VarChar" Scale="0" Size="50" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@Password" Precision="0" ProviderType="VarChar" Scale="0" Size="50" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="InputOutput" ParameterName="@ResponseMessage" Precision="0" ProviderType="NVarChar" Scale="0" Size="250" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -142,7 +190,7 @@
   <xs:element name="MainDAL" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="MainDAL" msprop:Generator_UserDSName="MainDAL">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="GetResources" msprop:Generator_TableClassName="GetResourcesDataTable" msprop:Generator_TableVarName="tableGetResources" msprop:Generator_TablePropName="GetResources" msprop:Generator_RowDeletingName="GetResourcesRowDeleting" msprop:Generator_RowChangingName="GetResourcesRowChanging" msprop:Generator_RowEvHandlerName="GetResourcesRowChangeEventHandler" msprop:Generator_RowDeletedName="GetResourcesRowDeleted" msprop:Generator_UserTableName="GetResources" msprop:Generator_RowChangedName="GetResourcesRowChanged" msprop:Generator_RowEvArgName="GetResourcesRowChangeEvent" msprop:Generator_RowClassName="GetResourcesRow">
+        <xs:element name="GetResources" msprop:Generator_TableClassName="GetResourcesDataTable" msprop:Generator_TableVarName="tableGetResources" msprop:Generator_RowChangedName="GetResourcesRowChanged" msprop:Generator_TablePropName="GetResources" msprop:Generator_RowDeletingName="GetResourcesRowDeleting" msprop:Generator_RowChangingName="GetResourcesRowChanging" msprop:Generator_RowEvHandlerName="GetResourcesRowChangeEventHandler" msprop:Generator_RowDeletedName="GetResourcesRowDeleted" msprop:Generator_RowClassName="GetResourcesRow" msprop:Generator_UserTableName="GetResources" msprop:Generator_RowEvArgName="GetResourcesRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Resource_ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnResource_ID" msprop:Generator_ColumnPropNameInRow="Resource_ID" msprop:Generator_ColumnPropNameInTable="Resource_IDColumn" msprop:Generator_UserColumnName="Resource_ID" type="xs:long" />
@@ -191,7 +239,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="GetReviews" msprop:Generator_TableClassName="GetReviewsDataTable" msprop:Generator_TableVarName="tableGetReviews" msprop:Generator_TablePropName="GetReviews" msprop:Generator_RowDeletingName="GetReviewsRowDeleting" msprop:Generator_RowChangingName="GetReviewsRowChanging" msprop:Generator_RowEvHandlerName="GetReviewsRowChangeEventHandler" msprop:Generator_RowDeletedName="GetReviewsRowDeleted" msprop:Generator_UserTableName="GetReviews" msprop:Generator_RowChangedName="GetReviewsRowChanged" msprop:Generator_RowEvArgName="GetReviewsRowChangeEvent" msprop:Generator_RowClassName="GetReviewsRow">
+        <xs:element name="GetReviews" msprop:Generator_TableClassName="GetReviewsDataTable" msprop:Generator_TableVarName="tableGetReviews" msprop:Generator_RowChangedName="GetReviewsRowChanged" msprop:Generator_TablePropName="GetReviews" msprop:Generator_RowDeletingName="GetReviewsRowDeleting" msprop:Generator_RowChangingName="GetReviewsRowChanging" msprop:Generator_RowEvHandlerName="GetReviewsRowChangeEventHandler" msprop:Generator_RowDeletedName="GetReviewsRowDeleted" msprop:Generator_RowClassName="GetReviewsRow" msprop:Generator_UserTableName="GetReviews" msprop:Generator_RowEvArgName="GetReviewsRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Review_ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnReview_ID" msprop:Generator_ColumnPropNameInRow="Review_ID" msprop:Generator_ColumnPropNameInTable="Review_IDColumn" msprop:Generator_UserColumnName="Review_ID" type="xs:long" />
@@ -213,11 +261,29 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="GetUsers" msprop:Generator_TableClassName="GetUsersDataTable" msprop:Generator_TableVarName="tableGetUsers" msprop:Generator_TablePropName="GetUsers" msprop:Generator_RowDeletingName="GetUsersRowDeleting" msprop:Generator_RowChangingName="GetUsersRowChanging" msprop:Generator_RowEvHandlerName="GetUsersRowChangeEventHandler" msprop:Generator_RowDeletedName="GetUsersRowDeleted" msprop:Generator_UserTableName="GetUsers" msprop:Generator_RowChangedName="GetUsersRowChanged" msprop:Generator_RowEvArgName="GetUsersRowChangeEvent" msprop:Generator_RowClassName="GetUsersRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="User_ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnUser_ID" msprop:Generator_ColumnPropNameInRow="User_ID" msprop:Generator_ColumnPropNameInTable="User_IDColumn" msprop:Generator_UserColumnName="User_ID" type="xs:long" />
+              <xs:element name="Username" msprop:Generator_ColumnVarNameInTable="columnUsername" msprop:Generator_ColumnPropNameInRow="Username" msprop:Generator_ColumnPropNameInTable="UsernameColumn" msprop:Generator_UserColumnName="Username" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:GetResources" />
       <xs:field xpath="mstns:Resource_ID" />
+    </xs:unique>
+    <xs:unique name="GetUsers_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:GetUsers" />
+      <xs:field xpath="mstns:User_ID" />
     </xs:unique>
   </xs:element>
 </xs:schema>

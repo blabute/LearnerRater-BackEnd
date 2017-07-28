@@ -5,6 +5,7 @@ using System.ServiceModel.Web;
 using LearnerRaterWCF.ClassFiles.Api;
 using System.Web;
 using LearnerRaterWCF.ClassFiles.DataAccess;
+using LearnerRaterWCF.Models;
 
 namespace LearnerRaterWCF
 {    
@@ -191,6 +192,58 @@ namespace LearnerRaterWCF
                 SetResponseStatus(HttpStatusCode.InternalServerError, "Unable to delete review");
             }
             return (bResult);
+        }
+
+        public long? AddUser(ApiClassUserPOST user)
+        {
+            var result = new ApiResponse();
+            try
+            {
+                var dataResource = new DataClassUser();
+                result = dataResource.SaveUser(user);
+                if (result.ID == null)
+                {
+                    SetResponseStatus(HttpStatusCode.InternalServerError, result.ResponseMessage);
+                }
+            }
+            catch (Exception ex)
+            {
+                SetResponseStatus(HttpStatusCode.NotFound, ex.Message);
+            }
+
+            return result.ID;
+        }
+
+        public List<ApiClassUserGET> GetUsers()
+        {
+            var users = new List<ApiClassUserGET>();
+            var test = System.ServiceModel.ServiceSecurityContext.Current.WindowsIdentity.Name;
+
+            try
+            {
+                var dataReview = new DataClassUser();
+                dataReview.LoadUserList(users);
+            }
+            catch
+            {
+                users.Clear();
+            }
+
+            return (users);
+        }
+
+        public bool? Login(ApiClassUserPOST user)
+        {
+            var dataReview = new DataClassUser();
+            var result = dataReview.Login(user);
+
+            if (!result.Result.HasValue || !result.Result.Value)
+            {
+                SetResponseStatus(HttpStatusCode.InternalServerError, result.ResponseMessage);
+                return null;
+            }
+
+            return result.Result;
         }
     }
 }

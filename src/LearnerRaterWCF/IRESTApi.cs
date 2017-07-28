@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Serialization;
+﻿using System.Collections.Generic;
 using System.ServiceModel;
 using System.ServiceModel.Web;
-using System.Text;
 using LearnerRaterWCF.ClassFiles.Api;
 
 namespace LearnerRaterWCF
@@ -91,5 +87,31 @@ namespace LearnerRaterWCF
             BodyStyle = WebMessageBodyStyle.Bare,
             UriTemplate = "DeleteReview?resourceid={resourceId}&reviewid={reviewid}")]
         bool DeleteReview(long resourceId, long reviewId);
+
+        // Get Users 
+        [OperationContract]
+        [WebInvoke(Method = "GET",
+             ResponseFormat = WebMessageFormat.Json,
+             BodyStyle = WebMessageBodyStyle.Bare,
+             UriTemplate = "GetUsers")]
+        List<ApiClassUserGET> GetUsers();
+
+        // Add User
+        [OperationContract]
+        [WebInvoke(Method = "POST",
+            ResponseFormat = WebMessageFormat.Json,
+            RequestFormat = WebMessageFormat.Json,
+            BodyStyle = WebMessageBodyStyle.Bare,
+            UriTemplate = "AddUser")]
+        long? AddUser(ApiClassUserPOST user);
+
+        // Login
+        [OperationContract]
+        [WebInvoke(Method = "POST",
+            ResponseFormat = WebMessageFormat.Json,
+            RequestFormat = WebMessageFormat.Json,
+            BodyStyle = WebMessageBodyStyle.Bare,
+            UriTemplate = "Login")]
+        bool? Login(ApiClassUserPOST user);
     }
 }
