@@ -38,24 +38,24 @@ namespace LearnerRaterWCF.ClassFiles.DataAccess
         {
             long? UserId = null;
             string ResponseMessage = null;
-            UsersTblAdapter.SaveUser(ref UserId, User.Username, User.Password, ref ResponseMessage);
+            UsersTblAdapter.SaveUser(ref UserId, User.Username, User.Password, User.PasswordSalt, User.Email, User.FullName, ref ResponseMessage);
             return new ApiResponse() { ID = UserId, ResponseMessage = ResponseMessage };
         }
 
         public bool UpdateUser(long? UserId, ApiClassUserPOST User)
         {
             string ResponseMessage = null;
-            UsersTblAdapter.SaveUser(ref UserId, User.Username, User.Password, ref ResponseMessage);
+            UsersTblAdapter.SaveUser(ref UserId, User.Username, User.Password, User.PasswordSalt, User.Email, User.FullName, ref ResponseMessage);
             return (UserId != null);
         }
 
         public ApiResponse Login(ApiClassUserPOST User)
         {
             string ResponseMessage = null;
-            bool? areLoggedOn = null;
-            UsersTblAdapter.Login(User.Username, User.Password, ref areLoggedOn, ref ResponseMessage);
+            
+            var test = UsersTblAdapter.Login(User.Username, ref ResponseMessage);
             //var test = new ApiResponse() { ID = areLoggedOn.HasValue ? (areLoggedOn.Value ? 1 : 0) : 0, ResponseMessage = ResponseMessage };
-            return new ApiResponse() { Result = areLoggedOn, ResponseMessage = ResponseMessage };
+            return new ApiResponse() { ResponseMessage = ResponseMessage };
         }
     }
 }

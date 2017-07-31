@@ -42,4 +42,11 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="PasswordSalt" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="f9df9bb9-8dce-4dd0-b239-c84427b79069" ChangeDateTime="07/31/2017 20:14:44">
+    <Property Name="ElementName" Value="[dbo].[Users].[DisplayName]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Users]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="FullName" />
+  </Operation>
 </Operations>

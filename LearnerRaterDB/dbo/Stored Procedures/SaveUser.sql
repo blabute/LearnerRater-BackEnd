@@ -1,12 +1,13 @@
 ﻿CREATE PROCEDURE [dbo].[SaveUser]
 	@User_ID bigint out,
 	@Username varchar(50),
-	@Password varchar(50),
+	@Password binary(64),
+	@PasswordSalt varchar(50),
+	@Email varchar(50),
+	@FullName varchar(50),
 	@ResponseMessage NVARCHAR(250) OUTPUT
 AS
 BEGIN
-	
-	DECLARE @PasswordSalt UNIQUEIDENTIFIER=NEWID()
 
 	BEGIN TRY
 		
@@ -17,8 +18,8 @@ BEGIN
 		ELSE
 		BEGIN
 		
-			INSERT INTO Users([Username], [Password], [PasswordSalt])
-			VALUES (@Username, HASHBYTES('SHA2_512', @Password+CAST(@PasswordSalt AS NVARCHAR(36))), @PasswordSalt)
+			INSERT INTO Users([Username], [Password], [PasswordSalt], [Email], [FullName])
+			VALUES (@Username, @Password, @PasswordSalt, @Email, @FullName)
 			SET @User_ID = @@IDENTITY
 
 			SET @ResponseMessage='Success'

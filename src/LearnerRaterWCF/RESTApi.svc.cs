@@ -217,7 +217,6 @@ namespace LearnerRaterWCF
         public List<ApiClassUserGET> GetUsers()
         {
             var users = new List<ApiClassUserGET>();
-            var test = System.ServiceModel.ServiceSecurityContext.Current.WindowsIdentity.Name;
 
             try
             {
@@ -232,7 +231,7 @@ namespace LearnerRaterWCF
             return (users);
         }
 
-        public bool? Login(ApiClassUserPOST user)
+        public long? Login(ApiClassUserPOST user)
         {
             var dataReview = new DataClassUser();
             var result = dataReview.Login(user);
@@ -243,7 +242,7 @@ namespace LearnerRaterWCF
                 return null;
             }
 
-            return result.Result;
+            return result.Password;
         }
     }
 }

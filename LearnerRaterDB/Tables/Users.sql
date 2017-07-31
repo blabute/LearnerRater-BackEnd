@@ -1,7 +1,9 @@
 ﻿CREATE TABLE [dbo].[Users]
 (
 	[User_ID] BIGINT IDENTITY(1,1) NOT NULL PRIMARY KEY, 
-    [Username] VARCHAR(50) NULL, 
-    [Password] BINARY(64) NULL, 
-    [PasswordSalt] UNIQUEIDENTIFIER NULL
+    [Username] VARCHAR(50) NOT NULL, 
+    [Password] BINARY(64) NOT NULL, 
+    [PasswordSalt] UNIQUEIDENTIFIER NOT NULL, 
+    [Email] VARCHAR(50) NOT NULL, 
+    [FullName] VARCHAR(50) NOT NULL
 )

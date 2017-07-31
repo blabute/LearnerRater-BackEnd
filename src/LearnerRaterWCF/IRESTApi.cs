@@ -112,6 +112,6 @@ namespace LearnerRaterWCF
             RequestFormat = WebMessageFormat.Json,
             BodyStyle = WebMessageBodyStyle.Bare,
             UriTemplate = "Login")]
-        bool? Login(ApiClassUserPOST user);
+        long? Login(ApiClassUserPOST user);
     }
 }
