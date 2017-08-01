@@ -93,8 +93,8 @@ namespace LearnerRaterWCF
         [WebInvoke(Method = "GET",
              ResponseFormat = WebMessageFormat.Json,
              BodyStyle = WebMessageBodyStyle.Bare,
-             UriTemplate = "GetUsers")]
-        List<ApiClassUserGET> GetUsers();
+             UriTemplate = "GetUser/{username}")]
+        ApiClassUserWithPassword GetUser(string username);
 
         // Add User
         [OperationContract]
@@ -103,15 +103,6 @@ namespace LearnerRaterWCF
             RequestFormat = WebMessageFormat.Json,
             BodyStyle = WebMessageBodyStyle.Bare,
             UriTemplate = "AddUser")]
-        long? AddUser(ApiClassUserPOST user);
-
-        // Login
-        [OperationContract]
-        [WebInvoke(Method = "POST",
-            ResponseFormat = WebMessageFormat.Json,
-            RequestFormat = WebMessageFormat.Json,
-            BodyStyle = WebMessageBodyStyle.Bare,
-            UriTemplate = "Login")]
-        long? Login(ApiClassUserPOST user);
+        long? AddUser(ApiClassUserWithPassword user);
     }
 }

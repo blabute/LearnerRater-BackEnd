@@ -76,13 +76,13 @@
     <Build Include="dbo\Stored Procedures\DeleteResourceReviews.sql" />
     <Build Include="Tables\Users.sql" />
     <Build Include="dbo\Stored Procedures\SaveUser.sql" />
-    <Build Include="dbo\Stored Procedures\Login.sql" />
     <Build Include="dbo\Stored Procedures\GetUsers.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="LearnerRaterDB.publish.xml" />
     <None Include="LearnerRaterDBSchemaCompare.scmp" />
     <None Include="_LearnerRaterDB.publish.xml" />
+    <None Include="LearnerRaterDB_1.publish.xml" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="LearnerRaterDB.refactorlog" />

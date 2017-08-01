@@ -1,2 +1,0 @@
-Delete me once a file is added to this directory.
-GitHub does not let you add an empty directory.

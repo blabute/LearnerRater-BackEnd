@@ -19,43 +19,42 @@ namespace LearnerRaterWCF.ClassFiles.DataAccess
             }
         }
 
-        public void LoadUserList(List<ApiClassUserGET> UserList)
+        public void LoadUserList(string username, List<ApiClassUserWithPassword> UserList, ref string responseMessage)
         {
             UserList.Clear();
-            var dt = UsersTblAdapter.GetData();
+            var dt = UsersTblAdapter.GetData(username, ref responseMessage);
             for (var i = 0; i < dt.Count; i++)
             {
-                var User = new ApiClassUserGET();
-                User.ID = dt[i].User_ID;
+                var User = new ApiClassUserWithPassword();
+                User.ID = dt[i].User_Id;
                 if (!dt[i].IsUsernameNull())
                     User.Username = dt[i].Username;
+                if (!dt[i].IsPasswordNull())
+                    User.Password = dt[i].Password;
+                if (!dt[i].IsEmailNull())
+                    User.Email = dt[i].Email;
+                if (!dt[i].IsFullNameNull())
+                    User.FullName = dt[i].FullName;
+                if (!dt[i].IsIsAdminNull())
+                    User.IsAdmin = dt[i].IsAdmin;
 
                 UserList.Add(User);
             }
         }
 
-        public ApiResponse SaveUser(ApiClassUserPOST User)
+        public ApiResponse SaveUser(ApiClassUserWithPassword User)
         {
             long? UserId = null;
             string ResponseMessage = null;
-            UsersTblAdapter.SaveUser(ref UserId, User.Username, User.Password, User.PasswordSalt, User.Email, User.FullName, ref ResponseMessage);
+            UsersTblAdapter.SaveUser(ref UserId, User.Username, User.Password, User.Email, User.FullName, ref ResponseMessage);
             return new ApiResponse() { ID = UserId, ResponseMessage = ResponseMessage };
         }
 
-        public bool UpdateUser(long? UserId, ApiClassUserPOST User)
+        public bool UpdateUser(long? UserId, ApiClassUserWithPassword User)
         {
             string ResponseMessage = null;
-            UsersTblAdapter.SaveUser(ref UserId, User.Username, User.Password, User.PasswordSalt, User.Email, User.FullName, ref ResponseMessage);
+            UsersTblAdapter.SaveUser(ref UserId, User.Username, User.Password, User.Email, User.FullName, ref ResponseMessage);
             return (UserId != null);
-        }
-
-        public ApiResponse Login(ApiClassUserPOST User)
-        {
-            string ResponseMessage = null;
-            
-            var test = UsersTblAdapter.Login(User.Username, ref ResponseMessage);
-            //var test = new ApiResponse() { ID = areLoggedOn.HasValue ? (areLoggedOn.Value ? 1 : 0) : 0, ResponseMessage = ResponseMessage };
-            return new ApiResponse() { ResponseMessage = ResponseMessage };
         }
     }
 }

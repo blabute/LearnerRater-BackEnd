@@ -1,8 +1,7 @@
 ﻿CREATE PROCEDURE [dbo].[SaveUser]
 	@User_ID bigint out,
 	@Username varchar(50),
-	@Password binary(64),
-	@PasswordSalt varchar(50),
+	@Password varchar(128),
 	@Email varchar(50),
 	@FullName varchar(50),
 	@ResponseMessage NVARCHAR(250) OUTPUT
@@ -18,8 +17,8 @@ BEGIN
 		ELSE
 		BEGIN
 		
-			INSERT INTO Users([Username], [Password], [PasswordSalt], [Email], [FullName])
-			VALUES (@Username, @Password, @PasswordSalt, @Email, @FullName)
+			INSERT INTO Users([Username], [Password], [Email], [FullName])
+			VALUES (@Username, @Password, @Email, @FullName)
 			SET @User_ID = @@IDENTITY
 
 			SET @ResponseMessage='Success'

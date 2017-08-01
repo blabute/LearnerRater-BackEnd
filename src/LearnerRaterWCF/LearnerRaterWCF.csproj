@@ -101,8 +101,8 @@
   <ItemGroup>
     <Compile Include="ClassFiles\Api\ApiClassCategory.cs" />
     <Compile Include="ClassFiles\Api\ApiClassResource.cs" />
-    <Compile Include="ClassFiles\Api\ApiClassUser_GET.cs" />
-    <Compile Include="ClassFiles\Api\ApiClassUser_POST.cs" />
+    <Compile Include="ClassFiles\Api\ApiClassUser.cs" />
+    <Compile Include="ClassFiles\Api\ApiClassUserWithPassword.cs" />
     <Compile Include="ClassFiles\Api\ApiClassReview.cs" />
     <Compile Include="ClassFiles\DataAccess\DataClassResource.cs" />
     <Compile Include="ClassFiles\DataAccess\DataClassUsers.cs" />

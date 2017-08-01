@@ -194,7 +194,7 @@ namespace LearnerRaterWCF
             return (bResult);
         }
 
-        public long? AddUser(ApiClassUserPOST user)
+        public long? AddUser(ApiClassUserWithPassword user)
         {
             var result = new ApiResponse();
             try
@@ -214,35 +214,28 @@ namespace LearnerRaterWCF
             return result.ID;
         }
 
-        public List<ApiClassUserGET> GetUsers()
+        public ApiClassUserWithPassword GetUser(string username)
         {
-            var users = new List<ApiClassUserGET>();
+            var users = new List<ApiClassUserWithPassword>();
+            string responseMessage = null;
 
             try
             {
                 var dataReview = new DataClassUser();
-                dataReview.LoadUserList(users);
+                dataReview.LoadUserList(username, users, ref responseMessage);
             }
             catch
             {
-                users.Clear();
+                SetResponseStatus(HttpStatusCode.Forbidden, responseMessage);
             }
 
-            return (users);
-        }
-
-        public long? Login(ApiClassUserPOST user)
-        {
-            var dataReview = new DataClassUser();
-            var result = dataReview.Login(user);
-
-            if (!result.Result.HasValue || !result.Result.Value)
+            if (users.Count > 1)
             {
-                SetResponseStatus(HttpStatusCode.InternalServerError, result.ResponseMessage);
+                SetResponseStatus(HttpStatusCode.InternalServerError, "More than one user with that username exists");
                 return null;
             }
 
-            return result.Password;
+            return users[0];
         }
     }
 }
